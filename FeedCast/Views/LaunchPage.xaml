@@ -1,0 +1,78 @@
+﻿<!-- 
+    Copyright (c) 2011 Microsoft Corporation.  All rights reserved.
+    Use of this sample source code is subject to the terms of the Microsoft license 
+    agreement under which you licensed this sample source code and is provided AS-IS.
+    If you did not accept the terms of the license agreement, you are not authorized 
+    to use this sample source code.  For the terms of the license, please see the 
+    license agreement between you and Microsoft.
+    
+    To see the MSDN article about this app, visit http://go.microsoft.com/fwlink/?LinkId=247592
+-->
+<phone:PhoneApplicationPage 
+    x:Class="FeedCast.Views.LaunchPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:vm="clr-namespace:FeedCast.ViewModels"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Title of the application-->
+        <TextBlock Text="{Binding LocalizedResources.ApplicationTitleToUpper, Source={StaticResource LocalizedStrings}}"
+                   Style="{StaticResource PageTitleStyle}"/>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="{StaticResource PhoneHorizontalMargin}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Page description-->
+            <TextBlock Text="{Binding LocalizedResources.InitialDescriptionText, Source={StaticResource LocalizedStrings}}"
+                       TextWrapping="Wrap"
+                       Style="{StaticResource PhoneTextAccentStyle}"
+                       Margin="0,0,0,12"/>
+
+            <!--ListBox that displays possible initial categories-->
+            <ListBox Grid.Row="1"
+                     Name="CategorySelection"
+                     ItemsSource="{Binding}"
+                     SelectionMode="Multiple"
+                     ItemContainerStyle="{StaticResource ListBoxItemCheckBoxStyle}">
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding CategoryTitle}" Style="{StaticResource PhoneTextTitle2Style}"/>
+                            <TextBlock Text="{Binding AssociatedFeeds}" Style="{StaticResource PhoneTextSmallStyle}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+            </ListBox>
+
+            <!--Button the user presses when they have finalized their selection-->
+            <Button Grid.Row="2"
+                    Content="{Binding LocalizedResources.InitialFinishedButtonText, Source={StaticResource LocalizedStrings}}"
+                    HorizontalAlignment="Center"
+                    Margin="{StaticResource PhoneMargin}"
+                    Click="OnFinishedClicked"/>
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

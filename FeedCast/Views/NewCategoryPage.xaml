@@ -1,0 +1,62 @@
+﻿<!-- 
+    Copyright (c) 2011 Microsoft Corporation.  All rights reserved.
+    Use of this sample source code is subject to the terms of the Microsoft license 
+    agreement under which you licensed this sample source code and is provided AS-IS.
+    If you did not accept the terms of the license agreement, you are not authorized 
+    to use this sample source code.  For the terms of the license, please see the 
+    license agreement between you and Microsoft.
+    
+    To see the MSDN article about this app, visit http://go.microsoft.com/fwlink/?LinkId=247592
+-->
+<phone:PhoneApplicationPage 
+    x:Class="FeedCast.Views.NewCategoryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tookit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:viewmodels="clr-namespace:FeedCast.ViewModels"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <!--Title of the page-->
+        <TextBlock Text="{Binding LocalizedResources.NewCategoryTitleText, Source={StaticResource LocalizedStrings}}"
+                   Style="{StaticResource PageTitleStyle}"/>
+        
+        <!--Description-->
+        <TextBlock Grid.Row="1"
+                   Text="{Binding LocalizedResources.NewCategoryDescriptionText, Source={StaticResource LocalizedStrings}}"
+                   TextWrapping="Wrap"
+                   Style="{StaticResource PhoneTextSmallStyle}"/>
+        
+        <!--TextBox to enter the category name-->
+        <TextBox Grid.Row="2" Name="CategoryNameTextBox" KeyUp="OnTextBoxKeyUp"/>
+        
+        <ListBox Name="FeedPicker"
+                 Grid.Row="3"
+                 SelectionMode="Multiple"
+                 ItemsSource="{Binding}"
+                 ItemContainerStyle="{StaticResource ListBoxItemCheckBoxStyle}">
+            
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding FeedTitle}" Style="{StaticResource PhoneTextLargeStyle}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</phone:PhoneApplicationPage>

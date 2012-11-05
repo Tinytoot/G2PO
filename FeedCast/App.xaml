@@ -1,0 +1,105 @@
+﻿<!-- 
+    Copyright (c) 2011 Microsoft Corporation.  All rights reserved.
+    Use of this sample source code is subject to the terms of the Microsoft license 
+    agreement under which you licensed this sample source code and is provided AS-IS.
+    If you did not accept the terms of the license agreement, you are not authorized 
+    to use this sample source code.  For the terms of the license, please see the 
+    license agreement between you and Microsoft.
+    
+    To see the MSDN article about this app, visit http://go.microsoft.com/fwlink/?LinkId=247592
+-->
+<Application 
+    x:Class="FeedCast.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:navigation="clr-namespace:System.Windows.Navigation;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:converter="clr-namespace:FeedCast.Converters"
+    xmlns:viewmodels="clr-namespace:FeedCast.ViewModels">
+
+    <!--Application Resources-->
+    <Application.Resources>
+        <local:LocalizedStrings xmlns:local="clr-namespace:FeedCast.Resources" x:Key="LocalizedStrings"/>
+
+        <!--Mapping application URI's for legibility, simplicity, code reuse...-->
+<navigation:UriMapper x:Key="UriMapper">
+    <navigation:UriMapper.UriMappings>
+        <navigation:UriMapping Uri="/Launch" MappedUri="/Views/LaunchPage.xaml"/>
+        <navigation:UriMapping Uri="/Main" MappedUri="/Views/MainPage.xaml"/>
+        <navigation:UriMapping Uri="/Article/{id}" MappedUri="/Views/ArticlePage.xaml?id={id}"/>
+        <navigation:UriMapping Uri="/Featured/{id}" MappedUri="/Views/ArticlePage.xaml?id={id}&amp;featured=1"/>
+        <navigation:UriMapping Uri="/Article/{id}/Feed" MappedUri="/Views/ArticlePage.xaml?id={id}&amp;feed=1"/>
+        <navigation:UriMapping Uri="/Article/{id}/Category/{cat_id}" MappedUri="/Views/ArticlePage.xaml?id={id}&amp;cat_id={cat_id}"/>
+        <navigation:UriMapping Uri="/Category/{id}" MappedUri="/Views/CategoryPage.xaml?id={id}"/>
+        <navigation:UriMapping Uri="/Feed/{id}" MappedUri="/Views/FeedPage.xaml?id={id}"/>
+        <navigation:UriMapping Uri="/Add" MappedUri="/Views/AddMenu.xaml"/>
+        <navigation:UriMapping Uri="/NewCategory" MappedUri="/Views/NewCategoryPage.xaml"/>
+        <navigation:UriMapping Uri="/NewFeed" MappedUri="/Views/NewFeedPage.xaml"/>
+        <navigation:UriMapping Uri="/NewFeed/{selectedCatID}" MappedUri="/Views/NewFeedPage.xaml?selectedCatID={selectedCatID}"/>
+        <navigation:UriMapping Uri="/Share/{url}" MappedUri="/Views/SharePage.xaml?url={url}"/>
+        <navigation:UriMapping Uri="/CategoryMenu" MappedUri="/Views/CategoryMenu.xaml"/>
+    </navigation:UriMapper.UriMappings>
+</navigation:UriMapper>
+
+        <sys:String x:Key="ApplicationTitleLarge">G2PO</sys:String>
+        <sys:String x:Key="ApplicationTitleNormal">G2PO</sys:String>
+
+        <!--Used on all pages where an application title is defined.-->
+        <Style x:Key="PageTitleStyle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="12,17,0,28"/>
+            <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilyNormal}"/>
+            <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeNormal}"/>
+            <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+        </Style>
+
+        <!--Used on SharePage and AddPage as titles.-->
+        <Style x:Key="ApplicationTitleContrastStyle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="12,17,0,28"/>
+            <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilyNormal}"/>
+            <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeNormal}"/>
+            <Setter Property="Foreground" Value="{StaticResource PhoneContrastForegroundBrush}"/>
+        </Style>
+
+        <!--Used on SharePage and AddPage as menu options.-->
+        <Style x:Key="MenuOptionContrastStyle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="{StaticResource PhoneMargin}"/>
+            <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilyNormal}"/>
+            <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeExtraLarge}"/>
+            <Setter Property="Foreground" Value="{StaticResource PhoneContrastForegroundBrush}"/>
+        </Style>
+
+        <Style x:Key="ListBoxItemCheckBoxStyle" TargetType="ListBoxItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <StackPanel Orientation="Horizontal">
+
+                            <CheckBox IsChecked="{Binding IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Margin="0 0 0 12"/>
+                            <ContentControl Name="ContentContainer"
+                                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                                            Content="{TemplateBinding Content}"
+                                            Foreground="{TemplateBinding Foreground}"
+                                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                            Margin="0 12 0 0"/>
+                            
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <toolkit:RelativeTimeConverter x:Key="RelativeTimeConverter"/>
+    </Application.Resources>
+
+    <Application.ApplicationLifetimeObjects>
+        <!--Required object that handles lifetime events for the application-->
+        <shell:PhoneApplicationService 
+            Launching="Application_Launching" Closing="Application_Closing" 
+            Activated="Application_Activated" Deactivated="Application_Deactivated"/>
+    </Application.ApplicationLifetimeObjects>
+
+</Application>

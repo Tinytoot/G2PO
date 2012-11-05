@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddTextToUpper" xml:space="preserve">
+    <value>AÑADIR</value>
+  </data>
+  <data name="AddToFavoritesText" xml:space="preserve">
+    <value>añadir a favoritos</value>
+  </data>
+  <data name="AppBarButtonNextText" xml:space="preserve">
+    <value>siguiente</value>
+  </data>
+  <data name="AppBarButtonOpenInBrowserText" xml:space="preserve">
+    <value>explorador</value>
+  </data>
+  <data name="AppBarButtonPreviousText" xml:space="preserve">
+    <value>anterior</value>
+  </data>
+  <data name="AppBarMenuItemAddText" xml:space="preserve">
+    <value>añadir una fuente</value>
+  </data>
+  <data name="ApplicationTitleToLower" xml:space="preserve">
+    <value>feedcast</value>
+  </data>
+  <data name="ApplicationTitleToUpper" xml:space="preserve">
+    <value>FEEDCAST</value>
+  </data>
+  <data name="BusinessCategoryTitleText" xml:space="preserve">
+    <value>Negocio</value>
+  </data>
+  <data name="CategoryPageAppBarPreviousText" xml:space="preserve">
+    <value>anterior</value>
+  </data>
+  <data name="ContextMenuPinToStartText" xml:space="preserve">
+    <value>fijar en la pantalla de inicio</value>
+  </data>
+  <data name="ContextMenuRemoveText" xml:space="preserve">
+    <value>eliminar</value>
+  </data>
+  <data name="EntertainmentCategoryTitleText" xml:space="preserve">
+    <value>Entretenimiento</value>
+  </data>
+  <data name="FashionCategoryTitleText" xml:space="preserve">
+    <value>Moda</value>
+  </data>
+  <data name="FavoritesCategoryTitleText" xml:space="preserve">
+    <value>Favoritos</value>
+  </data>
+  <data name="HealthCategoryTitleText" xml:space="preserve">
+    <value>Medicina</value>
+  </data>
+  <data name="InitialDescriptionText" xml:space="preserve">
+    <value>Seleccione categorías para inicialmente rellenar su lector. Luego se pueden agregar o quitar categorías y fuentes.</value>
+  </data>
+  <data name="InitialFinishedButtonText" xml:space="preserve">
+    <value>Iniciar</value>
+  </data>
+  <data name="InitialLoadingFailedText" xml:space="preserve">
+    <value>Hubo un error en la descarga de nuevos artículos, por favor compruebe su conexión.</value>
+  </data>
+  <data name="InitialLoadingText" xml:space="preserve">
+    <value>Configurando su lector, por favor espere.</value>
+  </data>
+  <data name="MainPageAllText" xml:space="preserve">
+    <value>todas</value>
+  </data>
+  <data name="MainPageAppBarAddText" xml:space="preserve">
+    <value>añadir</value>
+  </data>
+  <data name="MainPageAppBarRefreshText" xml:space="preserve">
+    <value>actualizar</value>
+  </data>
+  <data name="MainPageFeaturedText" xml:space="preserve">
+    <value>destacados</value>
+  </data>
+  <data name="MainPageSettingsTitleText" xml:space="preserve">
+    <value>configuración</value>
+  </data>
+  <data name="MainPageSettingsWifiText" xml:space="preserve">
+    <value>Sólo descargar en WiFi</value>
+  </data>
+  <data name="MainPageWhatsNewText" xml:space="preserve">
+    <value>novedades</value>
+  </data>
+  <data name="MusicCategoryTitleText" xml:space="preserve">
+    <value>Música</value>
+  </data>
+  <data name="NewCategoryAppBarSaveText" xml:space="preserve">
+    <value>guardar</value>
+  </data>
+  <data name="NewCategoryDescriptionText" xml:space="preserve">
+    <value>Introduzca el nombre deseado para esta categoría y seleccione fuentes existentes que le gustaría añadir a esa categoría.</value>
+  </data>
+  <data name="NewCategoryTextToLower" xml:space="preserve">
+    <value>categoría nueva</value>
+  </data>
+  <data name="NewCategoryTitleText" xml:space="preserve">
+    <value>CATEGORÍA NUEVA</value>
+  </data>
+  <data name="NewFeedAppBarSaveText" xml:space="preserve">
+    <value>guardar</value>
+  </data>
+  <data name="NewFeedAppBarSearchText" xml:space="preserve">
+    <value>búsqueda</value>
+  </data>
+  <data name="NewFeedCategoryDescriptionText" xml:space="preserve">
+    <value>Seleccione una categoría para agregarle esta fuente.</value>
+  </data>
+  <data name="NewFeedNoResultsText" xml:space="preserve">
+    <value>No hay resultados de búsqueda para mostrar.</value>
+  </data>
+  <data name="NewFeedSearchDescriptionText" xml:space="preserve">
+    <value>Introduzca el nombre o URL de una fuente que deseé buscar.</value>
+  </data>
+  <data name="NewFeedTextToLower" xml:space="preserve">
+    <value>fuente nueva</value>
+  </data>
+  <data name="NewFeedTitleText" xml:space="preserve">
+    <value>FUENTE NUEVA</value>
+  </data>
+  <data name="NewsCategoryTitleText" xml:space="preserve">
+    <value>Noticias</value>
+  </data>
+  <data name="PoliticsCategoryTitleText" xml:space="preserve">
+    <value>Política</value>
+  </data>
+  <data name="ShareText" xml:space="preserve">
+    <value>compartir</value>
+  </data>
+  <data name="SportsCategoryTitleText" xml:space="preserve">
+    <value>Deportes</value>
+  </data>
+  <data name="TechnologyCategoryTitleText" xml:space="preserve">
+    <value>Tecnologìa</value>
+  </data>
+</root>
